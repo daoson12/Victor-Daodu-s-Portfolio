@@ -15,7 +15,17 @@ import { EducationComponent } from './education/education.component';
 import { ReferenceComponent } from './reference/reference.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDmV_0M8b94hw_aZGNElDpkx0aZYbio1Lg",
+  authDomain: "my-portfolio-contact-me.firebaseapp.com",
+  projectId: "my-portfolio-contact-me",
+  storageBucket: "my-portfolio-contact-me.appspot.com",
+  messagingSenderId: "818009715457",
+  appId: "1:818009715457:web:c4490ca3800e901c96e100"
+};
 
 
 @NgModule({
@@ -23,7 +33,9 @@ import { ProjectsComponent } from './projects/projects.component';
     CommonModule,
     FormsModule,
     NgxPaginationModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig)
+
   ],
   declarations: [
     ProfileComponent,
@@ -38,7 +50,9 @@ import { ProjectsComponent } from './projects/projects.component';
     ReferenceComponent,
     ContactComponent,
     ProjectsComponent,
-    SplitPipe
+    SplitPipe,
+
+
   ],
 })
 export class ProfileModule { }
