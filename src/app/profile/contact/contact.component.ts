@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { environment } from '../../../environments/environment';
 
@@ -8,13 +9,23 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
- 
-  model: any = {};
+  contactForm:any=FormGroup
 
-  constructor(){}
+  constructor(private fb:FormBuilder){}
 
   ngOnInit() {
-     }
+    this.contactForm=this.fb.group({
+      name:['', Validators.required],
+      subject:['', Validators.required],
+      email:['', Validators.required],
+      message:['', Validators.required]
 
+    })
+  }
+
+  contactMe(value:any){
+    console.log(value);
+
+  }
 
 }

@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileModule } from './profile/profile.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
@@ -17,11 +18,14 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes, {
 
 }),
