@@ -108,7 +108,7 @@ export class ProfileService {
   Have good understanding of Jquery, Bootstrap, PrimeNG, Semantic UI, Bulma, Foundation, Ant Design, MongoDB, Firebase, and MYSQL`;
 
   about = 'Lover of innovation and everything related to generate new knowledge.Face problems with a smile and solve them as soon as possible. Very calculated about the time I spend and work I do.';
-  resumeurl = 'https://drive.google.com/file/d/1YUCA0X7q4iyLrQRNkfwLoDL3W0CTwDUt/view?usp=sharing';
+  resumeurl = 'https://drive.google.com/file/d/1o2t2SZsXPuKRdzjMNQM62hQ7mCuQPRxX/view?usp=sharing';
 
   skillsData: any = [
     {
