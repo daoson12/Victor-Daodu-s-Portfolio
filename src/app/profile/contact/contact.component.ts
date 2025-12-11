@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SecurityContext } from '@angular/core';
 import { ContactForm } from '../models/profile.models';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -57,8 +58,24 @@ export class ContactComponent implements OnInit {
       message: this.sanitizer.sanitize(SecurityContext.HTML, value.message) || ''
     };
 
-    // Submit to Firestore
-    this.formCollection.add(sanitizedValue)
+    // Submit to Firestore AND send email
+    Promise.all([
+      // Save to Firestore for records
+      this.formCollection.add(sanitizedValue),
+      // Send email notification via EmailJS
+      emailjs.send(
+        'service_y7lxu4e',
+        'template_4py9jk6',
+        {
+          from_name: sanitizedValue.name,
+          from_email: sanitizedValue.email,
+          subject: sanitizedValue.subject,
+          message: sanitizedValue.message,
+          to_email: 'daoduvictor48@gmail.com'
+        },
+        'VmfXady79NRNRaFso'
+      )
+    ])
       .then(() => {
         this.toastr.success('Your message has been sent!', 'Success');
         this.contactForm.reset();
@@ -66,7 +83,7 @@ export class ContactComponent implements OnInit {
       })
       .catch((err: Error) => {
         this.toastr.error('Failed to send message. Please try again.', 'Error');
-        console.error('Firestore error:', err);
+        console.error('Error:', err);
       });
   }
 }
