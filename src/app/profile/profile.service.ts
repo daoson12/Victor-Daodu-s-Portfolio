@@ -133,8 +133,13 @@ Open to conversations on frontend engineering, UI/UX best practices, dashboard d
   private readonly skillsData: Skill[] = [
     {
       id: '1',
-      skill: 'ANGULAR 2+',
-      progress: '85%'
+      skill: 'ANGULAR ',
+      progress: '90%'
+    },
+      {
+      id: '1',
+      skill: 'REACT JS',
+      progress: '50%'
     },
     {
       id: '2',
@@ -144,29 +149,29 @@ Open to conversations on frontend engineering, UI/UX best practices, dashboard d
     {
       id: '3',
       skill: 'JAVASCRIPT JQUERY',
-      progress: '80%'
+      progress: '90%'
     },
+    // {
+    //   id: '4',
+    //   skill: 'SQL , MYSQL,MONOGO, FIREBASE',
+    //   progress: '50%'
+    // },
     {
       id: '4',
-      skill: 'SQL , MYSQL,MONOGO, FIREBASE',
-      progress: '50%'
-    },
-    {
-      id: '5',
       skill: 'BOOTSTRAP, PRIMENG, SEMANTIC UI, BULMA, FOUNDATION, ANT DESIGN',
       progress: '90%'
     },
-    {
-      id: '6',
-      skill: 'JAVA',
-      progress: '60%'
-    }
+    // {
+    //   id: '6',
+    //   skill: 'JAVA',
+    //   progress: '60%'
+    // }
   ];
 
   private readonly educationData: Education[] = [
     {
       id: '1',
-      from_to_year: '2016 - 2021',
+      from_to_year: '2016 - 2020',
       education: 'Bachelor\'s Degree',
       stream: 'Bachelor of Computer Science Education',
       info: `The University of Jos, abbreviated as Unijos, is a Federal University in Jos,
