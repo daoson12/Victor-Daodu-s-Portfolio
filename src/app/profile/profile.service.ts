@@ -177,8 +177,8 @@ Open to conversations on frontend engineering, UI/UX best practices, dashboard d
       info: `The University of Jos, abbreviated as Unijos, is a Federal University in Jos,
        Plateau State, central Nigeria.`,
       institution: 'UNIVERSITY OF JOS, NIGERIA.',
-      grade: '2.1 CGPA',
-      sememterGrade: '3.0',
+      grade: '2:1',
+      sememterGrade: '3.50',
       certificate: 'B.Sc (ED) in Computer Science Education '
     },
     {
