@@ -90,14 +90,45 @@ export class ProfileService {
     }
   ];
 
-  readonly about2: string = `Software Developer with 2.5+ years of experience .
-  Worked with DataLinks and  agile methodologies .
-  Expertise in Angular 2+ All versions, Javascript, JAVA, Node JS and UI with Responsive Designs .
-  Have good understanding of Jquery, Bootstrap, PrimeNG, Semantic UI, Bulma, Foundation, Ant Design, MongoDB, Firebase, and MYSQL`;
+readonly about2: string = `
+I’m a Frontend Engineer specializing in Angular, TypeScript, and scalable dashboard development.
+I build clean, high-performance applications that help businesses make faster and smarter decisions.
 
-  readonly about: string = 'Lover of innovation and everything related to generate new knowledge.Face problems with a smile and solve them as soon as possible. Very calculated about the time I spend and work I do.';
+At eTranzact Global, I design and develop internal platforms and analytic dashboards used across the organization.
 
-  readonly resumeurl: string = 'https://drive.google.com/file/d/1o2t2SZsXPuKRdzjMNQM62hQ7mCuQPRxX/view?usp=sharing';
+Integrating complex REST APIs.
+Optimizing UI performance and responsiveness.
+Implementing reusable components and clean architecture.
+Creating intuitive user experiences that simplify workflows.
+
+I enjoy solving real problems with code, translating business needs into reliable frontend solutions.
+I focus heavily on writing maintainable code, improving UI/UX, and building features that scale.
+
+Beyond engineering, I share carefully curated local and international tech job opportunities to support professionals in advancing their careers.
+
+💼 What I Can Help You With:
+Building custom Angular dashboards.
+Developing internal tools and portals.
+Converting Figma designs to responsive UI.
+API integration & feature development.
+Performance optimization.
+Mentoring junior developers.
+
+💻 Tech Stack:
+Angular · TypeScript · RxJS · Angular Material · NgRx · REST APIs · Git
+
+🌍 Let’s Connect:
+Open to conversations on frontend engineering, UI/UX best practices, dashboard development, and global tech opportunities.
+`;
+
+
+// readonly about: string = `
+// Frontend Engineer focused on building scalable dashboards, intuitive user experiences, 
+// and maintainable, high-performance Angular applications. Passionate about clean architecture, 
+// problem-solving, and delivering real value through code.
+// `;
+
+  readonly resumeurl: string = 'https://drive.google.com/file/d/118cHWW-GxtFhHS9ui_30QmO5jfa6U_XL/view?usp=sharing';
 
   private readonly skillsData: Skill[] = [
     {
@@ -159,38 +190,87 @@ export class ProfileService {
     }
   ];
 
-  private readonly experienceData: Experience[] = [
-    {
-      id: 4,
-      company: ' Datalinks Nigeria Limited ',
-      location: 'Abuja, Remote',
-      timeline: 'June 2022 to Present',
-      role: 'Fontend Developer',
-      work: 'Working as a Frontend developer .Responsible for handling the UI in Angular and Consuming the api calls in .NET C#.'
-    },
-    {
-      id: 3,
-      company: 'Carflix Multi-venture Service Nig. Limited',
-      location: 'Remote',
-      timeline: 'January 2021 to Present -Contract',
-      role: 'Software Developer',
-      work: `Technologies : Angular , Node JS , Python, Java.
-      Worked on the web application built in Angular for different business and Car Market Campaigns.
-      Contributed on developing the Carflix enrollment
-      application,E-marketing application for on boarding car deal.`
-    },
-    {
-      id: 2,
-      company: 'SohClick Technology Solutions Ltd',
-      location: 'Jos, Nigeria',
-      timeline: 'December 2019 - May 2020',
-      role: 'Full stack Developer- Internship',
-      work: `Technologies : Angular , Node JS , Java.
-      I also took part in the development of an inventory solution for a business enterprise.
-      Created sections like templates several modules, like Product, Customers, Suppliers, Customer E-Wallet,
-      product Returns, Reports etc.`
-    }
-  ];
+private readonly experienceData: Experience[] = [
+  {
+    id: 1,
+    company: 'eTranzact Global',
+    location: 'British Virgin Islands (Remote)',
+    timeline: 'Nov 2024 – Present',
+    role: 'Software Frontend Developer',
+    work: `
+    • Developed and integrated a Bulk Top-Up feature for seamless batch processing of multiple transactions.  
+    • Integrated REST APIs for real-time data visualization and transaction processing.  
+    • Built highly responsive and scalable internal dashboards using Angular & TypeScript.  
+    • Collaborated with backend developers and UI/UX designers to streamline workflow processes.  
+    • Optimized UI performance and user experience using RxJS and state management best practices.  
+    • Technologies Used: Angular, Angular Material, NgRx, Bootstrap, TypeScript, Git.
+    `
+  },
+  {
+    id: 2,
+    company: 'SwipeTech Limited',
+    location: 'Lagos, Nigeria (Remote)',
+    timeline: 'Feb 2023 – Mar 2025',
+    role: 'Software Developer',
+    work: `
+    • Developed a responsive and scalable Expense Management System to streamline financial processes.  
+    • Integrated loan solutions with Renmoney, enabling instant loan access using secure API connections.  
+    • Built automated budgeting and reporting features that improved financial insights for users.  
+    • Increased user success rate by 63% through UX improvements and new feature development.  
+    • Improved page speed and scalability, achieving a 43% performance boost over the previous version.  
+    • Collaborated with cross-functional teams to ensure timely delivery and smooth development.  
+    • Engaged in Agile processes including sprint planning, backlog grooming, and retrospectives.  
+    • Technologies Used: Angular, Angular Material, NgRx, Tailwind CSS, TypeScript, Git.
+    `
+  },
+  {
+    id: 3,
+    company: 'Pyranex HQ Limited',
+    location: 'Abuja, Nigeria (Remote)',
+    timeline: 'Oct 2023 – Nov 2024',
+    role: 'Frontend Software Engineer',
+    work: `
+    • Developed and optimized Human Capital Management (HCM) solutions for enterprise clients.  
+    • Improved system response time by 50% through performance optimizations.  
+    • Enhanced dashboard usability by 20% through UI/UX collaboration.  
+    • Mentored junior developers and cultivated a collaborative engineering environment.  
+    • Implemented automated tests and CI/CD pipelines for continuous integration and deployment.  
+    • Reduced security threats and failures by 65% through proactive system checks and quality assurance.  
+    • Conducted code reviews, improving code efficiency by 70%.  
+    • Technologies Used: Angular, Angular Material, Tailwind CSS, Bootstrap, JavaScript, TypeScript, Git.
+    `
+  },
+  {
+    id: 4,
+    company: 'Datalinks Nigeria Limited',
+    location: 'Abuja, Nigeria (Remote)',
+    timeline: 'Jan 2022 – Feb 2023',
+    role: 'Software Developer',
+    work: `
+    • Developed responsive and scalable fintech solutions with high usability and performance.  
+    • Improved end-user success rate by 30% through UI/UX enhancements.  
+    • Boosted page performance by 25% through front-end optimization.  
+    • Participated in Agile ceremonies for efficient sprint execution.  
+    • Collaborated with backend engineers, designers, and product managers to deliver high-quality features.  
+    • Technologies Used: Angular, Angular Material, NgRx, Tailwind CSS, TypeScript, Git.
+    `
+  },
+  {
+    id: 5,
+    company: 'SohClick Technology Limited',
+    location: 'Jos, Plateau State',
+    timeline: 'Jan 2020 – Dec 2021',
+    role: 'Software Developer Intern',
+    work: `
+    • Contributed to development of client applications as a Junior Developer.  
+    • Worked on complex projects under senior developer mentorship.  
+    • Collaborated with designers, project managers, and developers to build scalable solutions.  
+    • Ensured cross-platform compatibility through consistent testing.  
+    • Technologies Used: Angular, HTML, CSS, Bootstrap, Semantic UI, Git.
+    `
+  }
+];
+
 
   constructor() { }
 

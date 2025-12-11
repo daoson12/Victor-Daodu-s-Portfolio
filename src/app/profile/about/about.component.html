@@ -5,12 +5,9 @@
           <div class="col-lg-6 col-md-12">
             <div class="card-body">
               <div class="h4 mt-0 title">About</div>
-              <div>
-                <ul>
-                  <li *ngFor="let m of about2 | split">{{m}}</li>
-                </ul>
+              <div  *ngFor="let line of about2.split('\n')" class="mb-2">
+                <p>{{line}}</p>
               </div>
-                <p>{{about1}}</p>
             </div>
           </div>
           <div class="col-lg-6 col-md-12">
