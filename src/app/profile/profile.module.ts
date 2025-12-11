@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../../environments/environment';
 
 import { SplitPipe } from './split.pipe';
@@ -51,7 +52,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     NgxPaginationModule,
     RouterModule.forChild(routes),
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ]
 })
 export class ProfileModule { }

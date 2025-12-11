@@ -5,8 +5,10 @@ const nodemailer =require("nodemailer");
 admin.initializeApp();
 require("dotenv").config();
 
-const {SENDER_EMAIL, SENDER_PASSWORD}= process.env;
-exports.sendEmailNotification=functions.firestore.document("submission/{docId}")
+const {SENDER_EMAIL, SENDER_PASSWORD, RECIPIENT_EMAIL}= process.env;
+
+// Send email notification when new contact form is submitted
+exports.sendEmailNotification=functions.firestore.document("enquiry/{docId}")
     .onCreate((snap, ctx)=>{
       const data=snap.data();
       const authData = nodemailer.createTransport({
@@ -18,15 +20,41 @@ exports.sendEmailNotification=functions.firestore.document("submission/{docId}")
           pass: SENDER_PASSWORD,
         },
       });
+
+      const emailHtml = `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Subject:</strong> ${data.subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${data.message}</p>
+        <hr>
+        <p><em>Submitted at: ${new Date().toLocaleString()}</em></p>
+      `;
+
+      const emailText = `
+New Contact Form Submission
+
+Name: ${data.name}
+Email: ${data.email}
+Subject: ${data.subject}
+
+Message:
+${data.message}
+
+Submitted at: ${new Date().toLocaleString()}
+      `;
+
       authData.sendMail({
-        from: "daoduvictor48@gmail.com",
-        to: `${data.email}`,
-        subject: "Your submission Info",
-        text: `${data.email}`,
-        html: `${data.email}`,
+        from: SENDER_EMAIL,
+        to: RECIPIENT_EMAIL,
+        replyTo: data.email,
+        subject: `Portfolio Contact: ${data.subject}`,
+        text: emailText,
+        html: emailHtml,
       // eslint-disable-next-line max-len
-      }).then((res)=>console.log("successfully sent that mail")).catch(
-          (err)=>console.log(err));
+      }).then((res)=>console.log("Successfully sent contact notification email"))
+          .catch((err)=>console.log("Email error:", err));
     });
 
 // // Create and Deploy Your First Cloud Functions
