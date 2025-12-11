@@ -8,6 +8,9 @@ import { environment } from '../../environments/environment';
 
 import { SplitPipe } from './split.pipe';
 import { ProfileComponent } from './profile.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ScrollComponent } from './scroll/scroll.component';
 import { IntroComponent } from './intro/intro.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
@@ -28,6 +31,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileComponent,
+    HeaderComponent,
+    FooterComponent,
+    ScrollComponent,
     IntroComponent,
     AboutComponent,
     SkillsComponent,
