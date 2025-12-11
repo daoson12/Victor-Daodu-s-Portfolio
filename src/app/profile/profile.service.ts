@@ -1,19 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { Observable, of } from 'rxjs';
+import { Project, Skill, Education, Experience } from './models/profile.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 
-
-  constructor(
-    private http: HttpClient
-  ) { }
-
-  projects: any = [
+  private readonly projects: Project[] = [
     {
       id: 1,
       title: 'Group teams',
@@ -24,7 +18,6 @@ export class ProfileService {
       imgUrl: 'assets/images/teamgrouping.png',
       tech: 'Angular 13 , Bootstrap'
     },
-
     {
       id: 2,
       title: 'Blood Donation Application UI',
@@ -35,8 +28,6 @@ export class ProfileService {
       imgUrl: 'assets/images/blood-donor.png',
       tech: 'Angular 10, CSS, HTML, Bootstrap'
     },
-
-
     {
       id: 3,
       title: 'Angular with unsplash image api - demonstrating lazy-loading',
@@ -47,7 +38,6 @@ export class ProfileService {
       imgUrl: 'assets/images/image-lazyloading.png',
       tech: 'Angular 10, unsplash image api, express server'
     },
-
     {
       id: 4,
       title: 'COVID 19 Tracker (Statistics) Version 1 app Using Angular',
@@ -97,20 +87,19 @@ export class ProfileService {
       mediumlink: '',
       imgUrl: 'assets/images/online-class.png',
       tech: 'HTML 5, CSS, Boostrap 4, ANGULAR-10, Javascript,'
-    },
-
-
-
+    }
   ];
-  about2 = `Software Developer with 2.5+ years of experience .
+
+  readonly about2: string = `Software Developer with 2.5+ years of experience .
   Worked with DataLinks and  agile methodologies .
   Expertise in Angular 2+ All versions, Javascript, JAVA, Node JS and UI with Responsive Designs .
   Have good understanding of Jquery, Bootstrap, PrimeNG, Semantic UI, Bulma, Foundation, Ant Design, MongoDB, Firebase, and MYSQL`;
 
-  about = 'Lover of innovation and everything related to generate new knowledge.Face problems with a smile and solve them as soon as possible. Very calculated about the time I spend and work I do.';
-  resumeurl = 'https://drive.google.com/file/d/1o2t2SZsXPuKRdzjMNQM62hQ7mCuQPRxX/view?usp=sharing';
+  readonly about: string = 'Lover of innovation and everything related to generate new knowledge.Face problems with a smile and solve them as soon as possible. Very calculated about the time I spend and work I do.';
 
-  skillsData: any = [
+  readonly resumeurl: string = 'https://drive.google.com/file/d/1o2t2SZsXPuKRdzjMNQM62hQ7mCuQPRxX/view?usp=sharing';
+
+  private readonly skillsData: Skill[] = [
     {
       id: '1',
       skill: 'ANGULAR 2+',
@@ -136,7 +125,6 @@ export class ProfileService {
       skill: 'BOOTSTRAP, PRIMENG, SEMANTIC UI, BULMA, FOUNDATION, ANT DESIGN',
       progress: '90%'
     },
-
     {
       id: '6',
       skill: 'JAVA',
@@ -144,8 +132,7 @@ export class ProfileService {
     }
   ];
 
-
-  educationData: any = [
+  private readonly educationData: Education[] = [
     {
       id: '1',
       from_to_year: '2016 - 2021',
@@ -169,10 +156,10 @@ export class ProfileService {
       sememterGrade: '80',
       certificate: 'Science',
       position: 'Health Prefect'
-
     }
   ];
-  exprienceData: any = [
+
+  private readonly experienceData: Experience[] = [
     {
       id: 4,
       company: ' Datalinks Nigeria Limited ',
@@ -180,7 +167,6 @@ export class ProfileService {
       timeline: 'June 2022 to Present',
       role: 'Fontend Developer',
       work: 'Working as a Frontend developer .Responsible for handling the UI in Angular and Consuming the api calls in .NET C#.'
-
     },
     {
       id: 3,
@@ -193,7 +179,6 @@ export class ProfileService {
       Contributed on developing the Carflix enrollment
       application,E-marketing application for on boarding car deal.`
     },
-
     {
       id: 2,
       company: 'SohClick Technology Solutions Ltd',
@@ -204,28 +189,24 @@ export class ProfileService {
       I also took part in the development of an inventory solution for a business enterprise.
       Created sections like templates several modules, like Product, Customers, Suppliers, Customer E-Wallet,
       product Returns, Reports etc.`
-    },
+    }
   ];
-  // contactus(data: any): Observable<any> {
-  //   return this.http.post(this.baseUrl + 'contact', data);
-  // }
 
-  skills(): Observable<any> {
-    // return this.http.get(this.baseUrl + 'skills');
-    return this.skillsData;
+  constructor() { }
+
+  getSkills(): Observable<Skill[]> {
+    return of(this.skillsData);
   }
 
-  getProjects(): Observable<any> {
-    // return this.http.get(this.baseUrl + 'skills');
-    return this.projects;
-  }
-  education(): Observable<any> {
-    // return this.http.get(this.baseUrl + 'education');
-    return this.educationData;
+  getProjects(): Observable<Project[]> {
+    return of(this.projects);
   }
 
-  exprience(): Observable<any> {
-    // return this.http.get(this.baseUrl + 'exprience');
-    return this.exprienceData;
+  getEducation(): Observable<Education[]> {
+    return of(this.educationData);
+  }
+
+  getExperience(): Observable<Experience[]> {
+    return of(this.experienceData);
   }
 }

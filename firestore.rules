@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Enquiry collection - write only, no read access
+    // Contact form submissions
+    match /enquiry/{document} {
+      // Allow writes only if all required fields are present and valid
+      allow write: if request.resource.data.keys().hasAll(['name', 'email', 'subject', 'message'])
+                   && request.resource.data.name is string
+                   && request.resource.data.email is string
+                   && request.resource.data.email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')
+                   && request.resource.data.subject is string
+                   && request.resource.data.message is string
+                   && request.resource.data.name.size() > 0
+                   && request.resource.data.name.size() <= 100
+                   && request.resource.data.email.size() > 0
+                   && request.resource.data.email.size() <= 100
+                   && request.resource.data.subject.size() > 0
+                   && request.resource.data.subject.size() <= 200
+                   && request.resource.data.message.size() > 0
+                   && request.resource.data.message.size() <= 2000;
+
+      // No public read access to contact submissions
+      allow read: if false;
+    }
+
+    // Deny all other accesses by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

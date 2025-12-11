@@ -1,31 +1,48 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { Component, OnInit, Inject, HostListener, OnDestroy } from '@angular/core';
 import { DOCUMENT } from "@angular/common";
+import { Subject } from 'rxjs';
+import { debounceTime, takeUntil } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-scroll',
-    templateUrl: './scroll.component.html',
-    styleUrls: ['./scroll.component.scss']
+  selector: 'app-scroll',
+  templateUrl: './scroll.component.html',
+  styleUrls: ['./scroll.component.scss']
 })
-export class ScrollComponent implements OnInit {
-    windowScrolled: boolean;
-    constructor(@Inject(DOCUMENT) private document: Document) {}
-    @HostListener("window:scroll", [])
-    onWindowScroll() {
-        if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
-            this.windowScrolled = true;
-        } 
-       else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
-            this.windowScrolled = false;
-        }
-    }
-    scrollToTop() {
-        (function smoothscroll() {
-            var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-            if (currentScroll > 0) {
-                window.requestAnimationFrame(smoothscroll);
-                window.scrollTo(0, currentScroll - (currentScroll / 8));
-            }
-        })();
-    }
-    ngOnInit() {}
+export class ScrollComponent implements OnInit, OnDestroy {
+  windowScrolled = false;
+  private scrollSubject$ = new Subject<void>();
+  private destroy$ = new Subject<void>();
+
+  constructor(@Inject(DOCUMENT) private document: Document) {}
+
+  @HostListener("window:scroll", [])
+  onWindowScroll(): void {
+    this.scrollSubject$.next();
+  }
+
+  ngOnInit(): void {
+    this.scrollSubject$
+      .pipe(
+        debounceTime(50),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => {
+        this.windowScrolled =
+          window.pageYOffset > 100 ||
+          this.document.documentElement.scrollTop > 100 ||
+          this.document.body.scrollTop > 100;
+      });
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 }
