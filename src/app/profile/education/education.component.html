@@ -1,29 +1,74 @@
 <div class="section" id="education">
     <div class="container cc-education">
       <div class="h4 text-center mb-4 title">Education</div>
-      <div class="card">
-        <div class="row" *ngFor="let edu of education; trackBy: trackByEducationId">
-          <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-            <div class="card-body cc-education-header">
-              <p>{{edu.from_to_year}}</p>
-              <div class="h5">{{edu.education}}</div>
-            </div>
-          </div>
-          <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-            <div class="card-body">
-              <div class="h5">{{edu.stream}}</div>
-               <h4 class="category">{{edu.institution}}
-               </h4>
-               <ul>
-                <li> {{edu.info}}</li>
-                    <li>Completed {{edu.certificate}} with <b>{{edu.grade}}</b>.</li>
-                 <li>Position Obtained: <strong>{{edu.position}}</strong></li>
-                 <li>Maintained above <b>{{edu.sememterGrade}}</b> in every semester of college academic .</li>
-             </ul>
+      <div class="card" data-aos="fade-up" data-aos-offset="50">
+        <div class="card-body text-center py-5">
+          <div class="education-degree">
+            <i class="fa fa-graduation-cap education-icon"></i>
+            <h3 class="degree-title">Bachelor of Computer Science Education</h3>
+            <h5 class="institution-name">University of Jos, Nigeria</h5>
+            <p class="graduation-year">2016 - 2021</p>
+            <span class="degree-grade">Second Class Upper (2.1 CGPA)</span>
+
+            <div class="relevant-courses">
+              <h6 class="courses-title">Relevant Coursework</h6>
+              <div class="courses-list">
+                <span class="course-tag">Python Programming</span>
+                <span class="course-tag">Java Development</span>
+                <span class="course-tag">Architectural Design</span>
+                <span class="course-tag">Software Development</span>
+                <span class="course-tag">Data Structures & Algorithms</span>
+                <span class="course-tag">Database Management</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Licenses & Certifications Section -->
+      <div class="card mt-4" data-aos="fade-up" data-aos-offset="50">
+        <div class="card-body">
+          <div class="h4 text-center mb-4 title">Licenses & Certifications</div>
+
+          <div class="certification-item">
+            <div class="cert-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="cert-content">
+              <h5 class="cert-name">Secure Code Foundational Course</h5>
+              <p class="cert-issuer"><i class="fa fa-building-o"></i> GxT International</p>
+              <div class="cert-details">
+                <span class="cert-date"><i class="fa fa-calendar"></i> Issued Sep 2025</span>
+                <span class="cert-id"><i class="fa fa-id-card-o"></i> Credential ID: GX1042020000225</span>
+              </div>
+              <a href="https://drive.google.com/file/d/1isPOFACrAkepglrrYnp0mZyTJt7nTnh-/view"
+                 target="_blank"
+                 class="cert-link">
+                <i class="fa fa-external-link"></i> View Certificate
+              </a>
+            </div>
+          </div>
+
+          <div class="certification-item">
+            <div class="cert-icon">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="cert-content">
+              <h5 class="cert-name">Taking Charge of Your Career</h5>
+              <p class="cert-issuer"><i class="fa fa-linkedin-square"></i> LinkedIn</p>
+              <div class="cert-details">
+                <span class="cert-date"><i class="fa fa-calendar"></i> Issued Mar 2025</span>
+                <span class="cert-id"><i class="fa fa-id-card-o"></i> Credential ID: 1ce8e57174a5d1707a888d17cb68be1e3161902c756025e230c54dd1e188dabb</span>
+              </div>
+              <a href="https://drive.google.com/file/d/1sq3JK4qcWPuMBfmGG19lFpPdVVtVlHwG/view"
+                 target="_blank"
+                 class="cert-link">
+                <i class="fa fa-external-link"></i> View Certificate
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>

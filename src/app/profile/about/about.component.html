@@ -1,48 +1,71 @@
 <div class="section" id="about">
     <div class="container">
-      <div class="card" data-aos="fade-up" data-aos-offset="10">
+      <div class="card about-card" data-aos="fade-up" data-aos-offset="10">
         <div class="row">
           <div class="col-lg-6 col-md-12">
             <div class="card-body">
-              <div class="h4 mt-0 title">About</div>
-              <div  *ngFor="let line of about2.split('\n')" class="mb-2">
-                <p>{{line}}</p>
+              <div class="h4 mt-0 title">About Me</div>
+              <div class="about-description">
+                <p class="lead-text">
+                  I'm a <strong>Frontend Engineer</strong> specializing in Angular, TypeScript, and scalable dashboard development.
+                </p>
+                <p>
+                  I build clean, high-performance applications that help businesses make faster and smarter decisions.
+                  Currently, I work at <strong>eTranzact Global</strong>, where I design and develop internal platforms
+                  and analytic dashboards used across the organization.
+                </p>
+                <div class="expertise-section">
+                  <h5 class="expertise-title">What I Do:</h5>
+                  <ul class="expertise-list">
+                    <li><i class="fa fa-check-circle"></i> Integrating complex REST APIs</li>
+                    <li><i class="fa fa-check-circle"></i> Optimizing UI performance and responsiveness</li>
+                    <li><i class="fa fa-check-circle"></i> Implementing reusable components and clean architecture</li>
+                    <li><i class="fa fa-check-circle"></i> Creating intuitive user experiences that simplify workflows</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-lg-6 col-md-12">
             <div class="card-body">
-              <div class="h4 mt-0 title">Basic Information</div>
-              <div class="row">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">Date of Birth:</strong>
+              <div class="h4 mt-0 title">Personal Information</div>
+              <div class="info-list">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fa fa-envelope"></i>
+                  </div>
+                  <div class="info-content">
+                    <strong>Email</strong>
+                    <span><a href="mailto:daoduvictor48@gmail.com">daoduvictor48@gmail.com</a></span>
+                  </div>
                 </div>
-                <div class="col-sm-8">August 20, 1997</div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">Email:</strong>
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <div class="info-content">
+                    <strong>Phone</strong>
+                    <span><a href="tel:+2349021489349">+234 902 148 9349</a></span>
+                  </div>
                 </div>
-                <div class="col-sm-8">daoduvictor48@gmail.com</div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">Phone:</strong>
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fa fa-map-marker"></i>
+                  </div>
+                  <div class="info-content">
+                    <strong>Location</strong>
+                    <span>Jos, Plateau State, Nigeria</span>
+                  </div>
                 </div>
-                <div class="col-sm-8">+234 9021489349</div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">Address:</strong>
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fa fa-language"></i>
+                  </div>
+                  <div class="info-content">
+                    <strong>Languages</strong>
+                    <span>English, Yoruba, Hausa, Tarok</span>
+                  </div>
                 </div>
-                <div class="col-sm-8">No 1 Beach Road Jos, Plateau, Nigeria
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">Language:</strong>
-                </div>
-                <div class="col-sm-8">Yoruba, hausa, Tarok, English</div>
               </div>
             </div>
           </div>
