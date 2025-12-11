@@ -1,14 +1,14 @@
 <div class="section" id="skill">
     <div class="container">
-        <div class="h4 text-center mb-4 title">Skills</div>
-        <div class="card skills-card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="h4 text-center mb-4 title bounce-in">Skills</div>
+        <div class="card skills-card zoom-in-scroll" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 mb-4" *ngFor="let skill of skills; trackBy: trackBySkillId">
-                        <div class="skill-item">
+                        <div class="skill-item stagger-item">
                             <div class="skill-header">
                                 <span class="skill-name">{{skill.skill}}</span>
-                                <span class="skill-percentage">{{skill.progress}}</span>
+                                <span class="skill-percentage scale-pulse">{{skill.progress}}</span>
                             </div>
                             <div class="skill-bar-wrapper">
                                 <div class="skill-bar"
